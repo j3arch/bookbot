@@ -35,8 +35,8 @@ def get_book_text(filepath):
         file_contents = f.read()
     return file_contents
 
-
-main()
+if __name__ == "__main__":
+    main()
 
 
 
