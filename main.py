@@ -2,7 +2,6 @@ import sys
 from stats import count_words, character_count, character_sorted 
 
 
-
 def main():
     if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")
