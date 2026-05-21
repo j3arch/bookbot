@@ -1,10 +1,10 @@
-def count_words(book_text):
+def count_words(book_text: str) -> int:
     word_count = len(book_text.split())
     return word_count
 
 
 
-def character_count(book_text):
+def character_count(book_text: str) -> dict[str, int]:
     character_list = {}
     book_text = book_text.lower()
     for char in book_text:
@@ -15,10 +15,10 @@ def character_count(book_text):
     return character_list
 
 
-def sort_on(item):
+def sort_on(item) -> int:
         return item["count"]
 
-def character_sorted(character_dict):
+def character_sorted(character_dict: dict[str, int]) -> list:
     char_sorted = []
     for char in character_dict:
         if char.isalpha():
