@@ -1,8 +1,8 @@
 import sys
 from stats import (
-    count_words,
-    character_count,
-    character_sorted
+    get_num_words,
+    chars_dict_to_sorted_list,
+    get_chars_dict,
 )
 
 
@@ -12,10 +12,10 @@ def main() -> None:
         sys.exit(1)
     book_path = sys.argv[1]
         
-    book_text = get_book_text(sys.argv[1])
-    char_list = character_count(book_text)
-    num_words = count_words(book_text)
-    sorted_chars = character_sorted(char_list)
+    text = get_book_text(book_path)
+    num_words = get_num_words(text)
+    chars_dict = get_chars_dict(text)
+    chars_sorted_list = chars_dict_to_sorted_list(chars_dict)
     print_report(book_path, num_words, chars_sorted_list)
 
 def get_book_text(filepath: str) -> str:
