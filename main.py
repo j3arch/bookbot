@@ -7,9 +7,10 @@ from stats import (
 
 
 def main() -> None:
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
+    book_path = sys.argv[1]
         
     book_text = get_book_text(sys.argv[1])
     char_list = character_count(book_text)
