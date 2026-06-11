@@ -16,26 +16,27 @@ def main() -> None:
     char_list = character_count(book_text)
     num_words = count_words(book_text)
     sorted_chars = character_sorted(char_list)
-    
-    print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {sys.argv[1]}...")
-    print("----------- Word Count ----------")
-    print(f"Found {num_words} total words")
-    print("--------- Character Count -------")
-    
-    for char_dict in sorted_chars:
-        char = char_dict["char"]
-        count = char_dict["count"]
-        print(f"{char}: {count}")
-    
-    print("============= END ===============")
-
-
+    print_report(book_path, num_words, chars_sorted_list)
 
 def get_book_text(filepath: str) -> str:
     with open(filepath) as f:
         file_contents = f.read()
     return file_contents
+
+def print_report(
+    book_path: str, num_words: int, chars_sorted_list: list[tuple[str, int]]
+) -> None:
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {book_path}...")
+    print("----------- Word Count ----------")
+    print(f"Found {num_words} total words")
+    print("--------- Character Count -------")
+    for char, count in chars_sorted_list:
+        if not char.isalpha():
+            continue
+        print(f"{char}: {count}")
+
+    print("============= END ===============")
 
 if __name__ == "__main__":
     main()
