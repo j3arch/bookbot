@@ -1,5 +1,9 @@
 import sys
-from stats import count_words, character_count, character_sorted 
+from stats import (
+    count_words,
+    character_count,
+    character_sorted
+)
 
 
 def main() -> None:
