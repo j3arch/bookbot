@@ -4,15 +4,15 @@ def get_num_words(text: str) -> int:
 
 
 
-def character_count(book_text: str) -> dict[str, int]:
-    character_list = {}
-    book_text = book_text.lower()
-    for char in book_text:
-        if char in character_list: 
-            character_list[char] += 1
+def get_chars_dict(text: str) -> dict[str, int]:
+    chars = {}
+    for char in text:
+        lowered = char.lower()
+        if lowered in chars:
+            chars[lowered] += 1
         else:
-            character_list[char] = 1
-    return character_list
+            chars[lowered] = 1
+    return chars
 
 
 def sort_on(item: tuple[str, int]) -> int:
