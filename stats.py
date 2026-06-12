@@ -1,6 +1,6 @@
-def count_words(book_text: str) -> int:
-    word_count = len(book_text.split())
-    return word_count
+def get_num_words(text: str) -> int:
+    words = text.split()
+    return len(words)
 
 
 
