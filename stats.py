@@ -19,12 +19,11 @@ def sort_on(char_count: tuple[str, int]) -> int:
     return char_count[1]
 
 
-def character_sorted(character_dict: dict[str, int]) -> list:
-    char_sorted = []
-    for char in character_dict:
-        if char.isalpha():
-            char_sorted.append({"char": char, "count": character_dict[char]})
-    char_sorted.sort(reverse=True, key=sort_on)
-    return char_sorted
+def chars_dict_to_sorted_list(num_chars_dict: dict[str, int]) -> list[tuple[str, int]]:
+    chars_list = []
+    for char in num_chars_dict:
+        count = num_chars_dict[char]
+        chars_list.append((char, count))
+    return sorted(chars_list, reverse=True, key=sort_on)
 
 
