@@ -15,8 +15,8 @@ def get_chars_dict(text: str) -> dict[str, int]:
     return chars
 
 
-def sort_on(item: tuple[str, int]) -> int:
-        return item["count"]
+def sort_on(char_count: tuple[str, int]) -> int:
+    return char_count[1]
 
 
 def character_sorted(character_dict: dict[str, int]) -> list:
